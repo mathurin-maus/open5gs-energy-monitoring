@@ -8,12 +8,22 @@ The objective was to study both the operation of a virtualized 5G core and the e
 
 ## Architecture
 
-- Open5GS
-- Kubernetes
-- Docker
-- Prometheus
-- Grafana
-- Kepler
+![Architecture](architecture.png)
+
+The project was deployed on a virtual machine using a Kubernetes cluster created with kind.
+
+Open5GS was used as the 5G Core Network, while Kepler, Prometheus and Grafana were used to collect, store and visualize energy consumption metrics.
+
+## Technologies
+
+| Technology | Purpose |
+|------------|---------|
+| Open5GS | 5G Core Network |
+| Kubernetes (kind) | Container orchestration |
+| Docker | Containerization |
+| Prometheus | Metrics collection |
+| Grafana | Metrics visualization |
+| Kepler | Energy consumption monitoring |
 
 ## Objectives
 
@@ -23,16 +33,31 @@ The objective was to study both the operation of a virtualized 5G core and the e
 - Analyze energy consumption of Kubernetes workloads
 - Visualize metrics through Grafana dashboards
 
-## Technologies
+## Deployment Results
 
-| Technology | Purpose |
-|------------|---------|
-| Open5GS | 5G Core Network |
-| Kubernetes | Orchestration |
-| Docker | Containerization |
-| Prometheus | Metrics collection |
-| Grafana | Visualization |
-| Kepler | Energy monitoring |
+### Open5GS Network Functions
+
+All Open5GS network functions were successfully deployed and running inside the Kubernetes cluster.
+
+![Open5GS Pods](open5gs-pods.png)
+
+### Kepler Deployment
+
+Kepler was deployed to collect energy consumption metrics from Kubernetes workloads.
+
+![Kepler Deployment](kepler-pods.png)
+
+### Monitoring Stack
+
+Prometheus and Grafana were deployed to collect, store and visualize infrastructure metrics.
+
+![Monitoring Stack](monitoring-stack.png)
+
+### Energy Consumption Dashboard
+
+Grafana dashboards were used to visualize energy consumption metrics collected by Kepler.
+
+![Grafana Dashboard](grafana-dashboard.png)
 
 ## Learning Outcomes
 
@@ -43,7 +68,4 @@ Through this project, I gained practical experience with:
 - Monitoring and observability
 - Cloud-native architectures
 - Telecom infrastructure virtualization
-
-## Screenshots
-
-Screenshots and architecture diagrams will be added soon.
+- Energy monitoring of cloud-native workloads
